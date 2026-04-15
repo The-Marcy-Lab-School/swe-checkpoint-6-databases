@@ -52,6 +52,8 @@ sudo -u postgres psql blog_db
 
 ## Grading
 
+Each query is worth 1 point based on correctness. Half credit (0.5 points) is awarded for queries that use the right structure but contain minor errors.
+
 ### Part 1: SELECT — Basic Reads (3 pts)
 
 - [ ] 1. Select all columns from all users (1 pt)
@@ -128,70 +130,70 @@ Use these to check your work.
 
 **<details><summary>1. All users (6 rows)</summary>**
 
-| user_id | username  | email               | created_at           |
-| ------- | --------- | ------------------- | -------------------- |
-| 1       | ann_k     | ann@example.com     | 2024-01-10 09:00:00  |
-| 2       | ben_r     | ben@example.com     | 2024-01-15 10:30:00  |
-| 3       | carmen_s  | carmen@example.com  | 2024-02-01 08:45:00  |
-| 4       | darius_m  | darius@example.com  | 2024-02-14 14:00:00  |
-| 5       | elena_p   | elena@example.com   | 2024-03-01 11:15:00  |
-| 6       | felix_o   | felix@example.com   | 2024-03-20 16:00:00  |
+| user_id | username | email              | created_at          |
+| ------- | -------- | ------------------ | ------------------- |
+| 1       | ann_k    | ann@example.com    | 2024-01-10 09:00:00 |
+| 2       | ben_r    | ben@example.com    | 2024-01-15 10:30:00 |
+| 3       | carmen_s | carmen@example.com | 2024-02-01 08:45:00 |
+| 4       | darius_m | darius@example.com | 2024-02-14 14:00:00 |
+| 5       | elena_p  | elena@example.com  | 2024-03-01 11:15:00 |
+| 6       | felix_o  | felix@example.com  | 2024-03-20 16:00:00 |
 
 </details>
 
 **<details><summary>2. Title and body from all posts (12 rows)</summary>**
 
-| title                              | body                                                              |
-| ---------------------------------- | ----------------------------------------------------------------- |
-| Getting Started with SQL           | SQL is a language for querying relational databases.              |
-| Why I Love Postgres                | Postgres is a powerful open-source database.                      |
-| Building REST APIs with Express    | Express makes it easy to build APIs in Node.js.                   |
-| JOIN Queries Explained             | A JOIN combines rows from two or more tables.                     |
-| Database Normalization Tips        | Normalization prevents redundant data in your schema.             |
-| React Hooks in Practice            | Hooks let you use state in functional components.                 |
-| CSS Grid vs Flexbox                | Both are powerful layout tools in CSS.                            |
-| My JavaScript Journey              | I started learning JavaScript two years ago.                      |
-| Async/Await Deep Dive              | Async functions return a Promise implicitly.                      |
-| Intro to TypeScript                | TypeScript adds static types to JavaScript.                       |
-| Node.js Best Practices             | Structure your project with clear separation of concerns.         |
-| Open Source Contributions          | Contributing to open source is deeply rewarding.                  |
+| title                           | body                                                      |
+| ------------------------------- | --------------------------------------------------------- |
+| Getting Started with SQL        | SQL is a language for querying relational databases.      |
+| Why I Love Postgres             | Postgres is a powerful open-source database.              |
+| Building REST APIs with Express | Express makes it easy to build APIs in Node.js.           |
+| JOIN Queries Explained          | A JOIN combines rows from two or more tables.             |
+| Database Normalization Tips     | Normalization prevents redundant data in your schema.     |
+| React Hooks in Practice         | Hooks let you use state in functional components.         |
+| CSS Grid vs Flexbox             | Both are powerful layout tools in CSS.                    |
+| My JavaScript Journey           | I started learning JavaScript two years ago.              |
+| Async/Await Deep Dive           | Async functions return a Promise implicitly.              |
+| Intro to TypeScript             | TypeScript adds static types to JavaScript.               |
+| Node.js Best Practices          | Structure your project with clear separation of concerns. |
+| Open Source Contributions       | Contributing to open source is deeply rewarding.          |
 
 </details>
 
 **<details><summary>3. All posts ordered by created_at newest to oldest (12 rows)</summary>**
 
-| post_id | title                              | created_at           |
-| ------- | ---------------------------------- | -------------------- |
-| 12      | Open Source Contributions          | 2024-04-10 16:00:00  |
-| 11      | Node.js Best Practices             | 2024-04-01 11:00:00  |
-| 10      | Intro to TypeScript                | 2024-03-22 09:30:00  |
-| 7       | CSS Grid vs Flexbox                | 2024-03-15 15:30:00  |
-| 3       | Building REST APIs with Express    | 2024-03-10 14:00:00  |
-| 9       | Async/Await Deep Dive              | 2024-03-05 12:00:00  |
-| 6       | React Hooks in Practice            | 2024-03-01 10:00:00  |
-| 5       | Database Normalization Tips        | 2024-02-20 13:30:00  |
-| 8       | My JavaScript Journey              | 2024-02-10 08:00:00  |
-| 2       | Why I Love Postgres                | 2024-02-05 09:00:00  |
-| 4       | JOIN Queries Explained             | 2024-02-01 11:00:00  |
-| 1       | Getting Started with SQL           | 2024-01-20 10:00:00  |
+| post_id | title                           | created_at          |
+| ------- | ------------------------------- | ------------------- |
+| 12      | Open Source Contributions       | 2024-04-10 16:00:00 |
+| 11      | Node.js Best Practices          | 2024-04-01 11:00:00 |
+| 10      | Intro to TypeScript             | 2024-03-22 09:30:00 |
+| 7       | CSS Grid vs Flexbox             | 2024-03-15 15:30:00 |
+| 3       | Building REST APIs with Express | 2024-03-10 14:00:00 |
+| 9       | Async/Await Deep Dive           | 2024-03-05 12:00:00 |
+| 6       | React Hooks in Practice         | 2024-03-01 10:00:00 |
+| 5       | Database Normalization Tips     | 2024-02-20 13:30:00 |
+| 8       | My JavaScript Journey           | 2024-02-10 08:00:00 |
+| 2       | Why I Love Postgres             | 2024-02-05 09:00:00 |
+| 4       | JOIN Queries Explained          | 2024-02-01 11:00:00 |
+| 1       | Getting Started with SQL        | 2024-01-20 10:00:00 |
 
 </details>
 
 **<details><summary>4. Posts by user_id = 2 (3 rows)</summary>**
 
-| post_id | title                       | body                                               | user_id | created_at           |
-| ------- | --------------------------- | -------------------------------------------------- | ------- | -------------------- |
-| 4       | JOIN Queries Explained      | A JOIN combines rows from two or more tables.      | 2       | 2024-02-01 11:00:00  |
-| 5       | Database Normalization Tips | Normalization prevents redundant data in your schema. | 2    | 2024-02-20 13:30:00  |
-| 12      | Open Source Contributions   | Contributing to open source is deeply rewarding.   | 2       | 2024-04-10 16:00:00  |
+| post_id | title                       | body                                                  | user_id | created_at          |
+| ------- | --------------------------- | ----------------------------------------------------- | ------- | ------------------- |
+| 4       | JOIN Queries Explained      | A JOIN combines rows from two or more tables.         | 2       | 2024-02-01 11:00:00 |
+| 5       | Database Normalization Tips | Normalization prevents redundant data in your schema. | 2       | 2024-02-20 13:30:00 |
+| 12      | Open Source Contributions   | Contributing to open source is deeply rewarding.      | 2       | 2024-04-10 16:00:00 |
 
 </details>
 
 **<details><summary>5. Users whose username starts with 'a' (1 row)</summary>**
 
-| user_id | username | email           | created_at           |
-| ------- | -------- | --------------- | -------------------- |
-| 1       | ann_k    | ann@example.com | 2024-01-10 09:00:00  |
+| user_id | username | email           | created_at          |
+| ------- | -------- | --------------- | ------------------- |
+| 1       | ann_k    | ann@example.com | 2024-01-10 09:00:00 |
 
 </details>
 
@@ -266,33 +268,33 @@ This includes the 2 users (elena_p, felix_o) who have written zero posts.
 
 Note: order may vary.
 
-| title                              | username  |
-| ---------------------------------- | --------- |
-| Getting Started with SQL           | ann_k     |
-| Why I Love Postgres                | ann_k     |
-| Building REST APIs with Express    | ann_k     |
-| Node.js Best Practices             | ann_k     |
-| JOIN Queries Explained             | ben_r     |
-| Database Normalization Tips        | ben_r     |
-| Open Source Contributions          | ben_r     |
-| React Hooks in Practice            | carmen_s  |
-| CSS Grid vs Flexbox                | carmen_s  |
-| My JavaScript Journey              | darius_m  |
-| Async/Await Deep Dive              | darius_m  |
-| Intro to TypeScript                | darius_m  |
+| title                           | username |
+| ------------------------------- | -------- |
+| Getting Started with SQL        | ann_k    |
+| Why I Love Postgres             | ann_k    |
+| Building REST APIs with Express | ann_k    |
+| Node.js Best Practices          | ann_k    |
+| JOIN Queries Explained          | ben_r    |
+| Database Normalization Tips     | ben_r    |
+| Open Source Contributions       | ben_r    |
+| React Hooks in Practice         | carmen_s |
+| CSS Grid vs Flexbox             | carmen_s |
+| My JavaScript Journey           | darius_m |
+| Async/Await Deep Dive           | darius_m |
+| Intro to TypeScript             | darius_m |
 
 </details>
 
 **<details><summary>14. All users with post count — LEFT JOIN (6 rows)</summary>**
 
-| username  | post_count |
-| --------- | ---------- |
-| ann_k     | 4          |
-| ben_r     | 3          |
-| darius_m  | 3          |
-| carmen_s  | 2          |
-| elena_p   | 0          |
-| felix_o   | 0          |
+| username | post_count |
+| -------- | ---------- |
+| ann_k    | 4          |
+| ben_r    | 3          |
+| darius_m | 3          |
+| carmen_s | 2          |
+| elena_p  | 0          |
+| felix_o  | 0          |
 
 </details>
 
@@ -312,14 +314,14 @@ Note: order may vary.
 
 Note: order may vary.
 
-| title                              | username  |
-| ---------------------------------- | --------- |
-| Building REST APIs with Express    | ann_k     |
-| Node.js Best Practices             | ann_k     |
-| React Hooks in Practice            | carmen_s  |
-| My JavaScript Journey              | darius_m  |
-| Async/Await Deep Dive              | darius_m  |
-| Intro to TypeScript                | darius_m  |
+| title                           | username |
+| ------------------------------- | -------- |
+| Building REST APIs with Express | ann_k    |
+| Node.js Best Practices          | ann_k    |
+| React Hooks in Practice         | carmen_s |
+| My JavaScript Journey           | darius_m |
+| Async/Await Deep Dive           | darius_m |
+| Intro to TypeScript             | darius_m |
 
 </details>
 
