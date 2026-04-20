@@ -35,71 +35,63 @@
 
 
 -- ============================================================
--- Part 3: INSERT, UPDATE, DELETE — Modifying Data
+-- Part 3: Aggregates — COUNT, GROUP BY, HAVING
 -- ============================================================
 
--- 6. Insert a new user with username 'grace_h' and email 'grace@example.com'.
-
-
--- 7. Update the title of the post with post_id = 7 to
---    'CSS Grid vs Flexbox: A Complete Guide'.
-
-
--- 8. Delete the tag with tag_id = 6.
-
-
--- ============================================================
--- Part 4: Aggregates — COUNT, GROUP BY, HAVING
--- ============================================================
-
--- 9. Count the total number of posts in the table.
+-- 6. Count the total number of posts in the table.
 --    Name the result column total_posts.
 
 
--- 10. Count how many posts each user has written.
---     Show user_id and the count. Name the count column post_count.
+-- 7. Count how many posts each user has written.
+--    Show user_id and the count. Name the count column post_count.
 
 
--- 11. Show only the user_id values for users who have written more than 2 posts.
---     Include the post count. Name the count column post_count.
-
-
--- 12. Find the average number of posts per user across ALL users
---     (including users who have written zero posts).
---     Round to 2 decimal places. Name the column avg_posts_per_user.
---
---     Hint: you will need a subquery. Wrap your GROUP BY query as a
---     derived table and call AVG() on the count column.
+-- 8. Show only the user_id values for users who have written more than 2 posts.
+--    Include the post count. Name the count column post_count.
 
 
 -- ============================================================
--- Part 5: JOIN Queries
+-- Part 4: JOIN Queries
 -- ============================================================
 
--- 13. Show each post's title and the username of its author.
---     Only include posts that have a matching user (use INNER JOIN).
---     Show title and username.
+-- 9. Show each post's title and the username of its author.
+--    Only include posts that have a matching user (use INNER JOIN).
+--    Show title and username.
 
 
--- 14. Show all users and their post count, including users who have
+-- 10. Show all users and their post count, including users who have
 --     written zero posts (use LEFT JOIN).
 --     Show username and post_count. Order by post_count descending.
 
 
--- 15. Show the name of every tag associated with the post titled
+-- 11. Show the name of every tag associated with the post titled
 --     'Getting Started with SQL'.
 --     Show only the tag name column.
 
 
--- 16. Show the title and author username of every post that has
+-- 12. Show the title and author username of every post that has
 --     the tag 'javascript'.
 --     Show title and username.
 
 
--- 17. Show each tag name and how many posts use it.
+-- 13. Show each tag name and how many posts use it.
 --     Name the count column post_count.
 --     Order by post_count from highest to lowest.
 
 
--- 18. Show the title of every post that has no tags.
+-- 14. Show the title of every post that has no tags.
 --     Hint: use a LEFT JOIN on post_tags and filter for NULL.
+
+
+-- ============================================================
+-- Part 5: INSERT, UPDATE, DELETE — Modifying Data
+-- ============================================================
+
+-- 15. Insert a new user with username 'grace_h' and email 'grace@example.com'.
+
+
+-- 16. Update the title of the post with post_id = 7 to
+--     'CSS Grid vs Flexbox: A Complete Guide'.
+
+
+-- 17. Delete the tag with tag_id = 6.

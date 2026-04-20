@@ -5,10 +5,10 @@ This checkpoint assesses your SQL skills across the full range of topics covered
 - [Setup](#setup)
 - [Grading](#grading)
   - [Part 1: SELECT — Basic Reads (3 pts)](#part-1-select--basic-reads-3-pts)
-  - [Part 2: WHERE — Filtering Data (4 pts)](#part-2-where--filtering-data-4-pts)
-  - [Part 3: INSERT, UPDATE, DELETE — Modifying Data (6 pts)](#part-3-insert-update-delete--modifying-data-6-pts)
-  - [Part 4: Aggregates — COUNT, GROUP BY, HAVING (8 pts)](#part-4-aggregates--count-group-by-having-8-pts)
-  - [Part 5: JOIN Queries (9 pts)](#part-5-join-queries-9-pts)
+  - [Part 2: WHERE — Filtering Data (2 pts)](#part-2-where--filtering-data-2-pts)
+  - [Part 3: Aggregates — COUNT, GROUP BY, HAVING (3 pts)](#part-3-aggregates--count-group-by-having-3-pts)
+  - [Part 4: JOIN Queries (6 pts)](#part-4-join-queries-6-pts)
+  - [Part 5: INSERT, UPDATE, DELETE — Modifying Data (3 pts)](#part-5-insert-update-delete--modifying-data-3-pts)
 - [Schema Reference](#schema-reference)
 - [Expected Output](#expected-output)
 
@@ -18,33 +18,29 @@ This checkpoint assesses your SQL skills across the full range of topics covered
 
 **2. Make a draft branch:**
 
-```sh
-git checkout -b draft
-```
+    ```sh
+    git checkout -b draft
+    ```
 
 **3. Run the seed file to create and populate `blog_db`:**
 
-**Mac:**
-```sh
-psql -f setup.sql
-```
+    ```sh
+    # Mac:
+    psql -f setup.sql 
 
-**Windows/WSL:**
-```sh
-sudo -u postgres psql -f setup.sql
-```
+    # Windows/WSL:
+    sudo -u postgres psql -f setup.sql
+    ```
 
 **4. Connect to the database:**
 
-**Mac:**
-```sh
-psql blog_db
-```
+    ```sh
+    # Mac:
+    psql blog_db
 
-**Windows/WSL:**
-```sh
-sudo -u postgres psql blog_db
-```
+    #Windows/WSL:
+    sudo -u postgres psql blog_db
+    ```
 
 **5. Open `queries.sql`** and write your answer below each prompt. You can test queries directly in `psql`, or open the file in TablePlus and run them from there.
 
@@ -56,36 +52,35 @@ Each query is worth 1 point based on correctness. Half credit (0.5 points) is aw
 
 ### Part 1: SELECT — Basic Reads (3 pts)
 
-- [ ] 1. Select all columns from all users (1 pt)
-- [ ] 2. Select only the title and body from all posts (1 pt)
-- [ ] 3. Select all columns from all posts, ordered by created_at newest to oldest (1 pt)
+- [ ] 1. Select all columns from all users
+- [ ] 2. Select only the title and body from all posts
+- [ ] 3. Select all columns from all posts, ordered by created_at newest to oldest
 
-### Part 2: WHERE — Filtering Data (4 pts)
+### Part 2: WHERE — Filtering Data (2 pts)
 
-- [ ] 4. Select all posts written by user_id = 2 (2 pts)
-- [ ] 5. Select all users whose username starts with the letter 'a' (2 pts)
+- [ ] 4. Select all posts written by user_id = 2
+- [ ] 5. Select all users whose username starts with the letter 'a'
 
-### Part 3: INSERT, UPDATE, DELETE — Modifying Data (6 pts)
+### Part 3: Aggregates — COUNT, GROUP BY, HAVING (3 pts)
 
-- [ ] 6. Insert a new user with username 'grace_h' and email 'grace@example.com' (2 pts)
-- [ ] 7. Update the title of post_id = 7 to 'CSS Grid vs Flexbox: A Complete Guide' (2 pts)
-- [ ] 8. Delete the tag with tag_id = 6 (2 pts)
+- [ ] 6. Count the total number of posts
+- [ ] 7. Count posts per user; show user_id and post_count
+- [ ] 8. Show only users who have written more than 2 posts
 
-### Part 4: Aggregates — COUNT, GROUP BY, HAVING (8 pts)
+### Part 4: JOIN Queries (6 pts)
 
-- [ ] 9. Count the total number of posts (1 pt)
-- [ ] 10. Count posts per user; show user_id and post_count (2 pts)
-- [ ] 11. Show only users who have written more than 2 posts (2 pts)
-- [ ] 12. Find the average number of posts per user across ALL users, rounded to 2 decimal places (3 pts)
+- [ ] 9. Show each post's title and its author's username using INNER JOIN
+- [ ] 10. Show all users and their post count, including zero-post users, using LEFT JOIN
+- [ ] 11. Show all tag names for the post titled 'Getting Started with SQL'
+- [ ] 12. Show the title and author username of every post tagged 'javascript'
+- [ ] 13. Show each tag name and how many posts use it, ordered by count descending
+- [ ] 14. Show the title of every post that has no tags
 
-### Part 5: JOIN Queries (9 pts)
+### Part 5: INSERT, UPDATE, DELETE — Modifying Data (3 pts)
 
-- [ ] 13. Show each post's title and its author's username using INNER JOIN (1 pt)
-- [ ] 14. Show all users and their post count, including zero-post users, using LEFT JOIN (2 pts)
-- [ ] 15. Show all tag names for the post titled 'Getting Started with SQL' (2 pts)
-- [ ] 16. Show the title and author username of every post tagged 'javascript' (1 pt)
-- [ ] 17. Show each tag name and how many posts use it, ordered by count descending (1 pt)
-- [ ] 18. Show the title of every post that has no tags (2 pts)
+- [ ] 15. Insert a new user with username 'grace_h' and email 'grace@example.com'
+- [ ] 16. Update the title of post_id = 7 to 'CSS Grid vs Flexbox: A Complete Guide'
+- [ ] 17. Delete the tag with tag_id = 6
 
 ---
 
@@ -143,6 +138,8 @@ Use these to check your work.
 
 **<details><summary>2. Title and body from all posts (12 rows)</summary>**
 
+Note: order may vary.
+
 | title                           | body                                                      |
 | ------------------------------- | --------------------------------------------------------- |
 | Getting Started with SQL        | SQL is a language for querying relational databases.      |
@@ -181,6 +178,8 @@ Use these to check your work.
 
 **<details><summary>4. Posts by user_id = 2 (3 rows)</summary>**
 
+Note: order may vary.
+
 | post_id | title                       | body                                                  | user_id | created_at          |
 | ------- | --------------------------- | ----------------------------------------------------- | ------- | ------------------- |
 | 4       | JOIN Queries Explained      | A JOIN combines rows from two or more tables.         | 2       | 2024-02-01 11:00:00 |
@@ -197,31 +196,7 @@ Use these to check your work.
 
 </details>
 
-**<details><summary>6. After inserting 'grace_h'</summary>**
-
-You should see: `INSERT 0 1`
-
-Run `SELECT * FROM users;` to verify — you should see 7 rows with grace_h appearing last (user_id = 7).
-
-</details>
-
-**<details><summary>7. After updating post_id = 7</summary>**
-
-You should see: `UPDATE 1`
-
-Run `SELECT * FROM posts WHERE post_id = 7;` to verify — the title should now read `CSS Grid vs Flexbox: A Complete Guide`.
-
-</details>
-
-**<details><summary>8. After deleting tag_id = 6</summary>**
-
-You should see: `DELETE 1`
-
-Run `SELECT * FROM tags;` to verify — you should see 5 rows and the `career` tag should be gone.
-
-</details>
-
-**<details><summary>9. Total number of posts (1 row)</summary>**
+**<details><summary>6. Total number of posts (1 row)</summary>**
 
 | total_posts |
 | ----------- |
@@ -229,7 +204,7 @@ Run `SELECT * FROM tags;` to verify — you should see 5 rows and the `career` t
 
 </details>
 
-**<details><summary>10. Post count per user (4 rows)</summary>**
+**<details><summary>7. Post count per user (4 rows)</summary>**
 
 Note: order may vary.
 
@@ -242,7 +217,7 @@ Note: order may vary.
 
 </details>
 
-**<details><summary>11. Users with more than 2 posts (3 rows)</summary>**
+**<details><summary>8. Users with more than 2 posts (3 rows)</summary>**
 
 Note: order may vary.
 
@@ -254,17 +229,7 @@ Note: order may vary.
 
 </details>
 
-**<details><summary>12. Average posts per user across all users (1 row)</summary>**
-
-This includes the 2 users (elena_p, felix_o) who have written zero posts.
-
-| avg_posts_per_user |
-| ------------------ |
-| 2.00               |
-
-</details>
-
-**<details><summary>13. Post titles with author usernames — INNER JOIN (12 rows)</summary>**
+**<details><summary>9. Post titles with author usernames — INNER JOIN (12 rows)</summary>**
 
 Note: order may vary.
 
@@ -285,7 +250,7 @@ Note: order may vary.
 
 </details>
 
-**<details><summary>14. All users with post count — LEFT JOIN (6 rows)</summary>**
+**<details><summary>10. All users with post count — LEFT JOIN (6 rows)</summary>**
 
 | username | post_count |
 | -------- | ---------- |
@@ -298,7 +263,7 @@ Note: order may vary.
 
 </details>
 
-**<details><summary>15. Tags on 'Getting Started with SQL' (3 rows)</summary>**
+**<details><summary>11. Tags on 'Getting Started with SQL' (3 rows)</summary>**
 
 Note: order may vary.
 
@@ -310,7 +275,7 @@ Note: order may vary.
 
 </details>
 
-**<details><summary>16. Posts tagged 'javascript' with author username (6 rows)</summary>**
+**<details><summary>12. Posts tagged 'javascript' with author username (6 rows)</summary>**
 
 Note: order may vary.
 
@@ -325,7 +290,7 @@ Note: order may vary.
 
 </details>
 
-**<details><summary>17. Tag names with post counts (6 rows)</summary>**
+**<details><summary>13. Tag names with post counts (6 rows)</summary>**
 
 Note: rows with the same count may appear in a different order — that's okay.
 
@@ -340,10 +305,34 @@ Note: rows with the same count may appear in a different order — that's okay.
 
 </details>
 
-**<details><summary>18. Posts with no tags (1 row)</summary>**
+**<details><summary>14. Posts with no tags (1 row)</summary>**
 
 | title                     |
 | ------------------------- |
 | Open Source Contributions |
+
+</details>
+
+**<details><summary>15. After inserting 'grace_h'</summary>**
+
+You should see: `INSERT 0 1`
+
+Run `SELECT * FROM users;` to verify — you should see 7 rows with grace_h appearing last (user_id = 7).
+
+</details>
+
+**<details><summary>16. After updating post_id = 7</summary>**
+
+You should see: `UPDATE 1`
+
+Run `SELECT * FROM posts WHERE post_id = 7;` to verify — the title should now read `CSS Grid vs Flexbox: A Complete Guide`.
+
+</details>
+
+**<details><summary>17. After deleting tag_id = 6</summary>**
+
+You should see: `DELETE 1`
+
+Run `SELECT * FROM tags;` to verify — you should see 5 rows and the `career` tag should be gone.
 
 </details>
